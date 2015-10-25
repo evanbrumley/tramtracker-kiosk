@@ -1,0 +1,225 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.background-video {
+    width: 100%;
+    min-height: 100%;
+}
+
+.clock {
+    font-weight: 100;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 5em;
+}
+
+.trams {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.tram-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    background: url("/public/img/tram-icon-36x36.png") 0 0 no-repeat;
+}
+
+.tram-zones {
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+}
+
+.tram-zone {
+    width: 30px;
+}
+
+.tram-zone-distant {
+    background-color: rgba(150, 150, 150, 0.5);
+    height: 67%;
+}
+
+.tram-zone-near {
+    background-color: rgba(0, 100, 0, 0.5);
+    height: 23%;
+}
+
+.tram-zone-arriving {
+    background-color: rgba(100, 0, 0, 0.5);
+    height: 10%;
+}
+
+.tram {
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 51px;
+    border-top: 2px solid white;
+
+    .tram-arrival-time {
+        display: block;
+        width: 50px;
+        text-align: center;
+        color: white;
+        position: absolute;
+        top: 0;
+        line-height: 1em;
+        left: 0;
+        font-size: 2em;
+        font-weight: 300;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 3px 0;
+    }
+}
+
+.messages {
+    position: absolute;
+    top: 150px;
+    width: 50%;
+    left: 32px;
+    max-height: 60%;
+    overflow-y: auto;
+}
+
+.message-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+        margin-bottom: 5px;
+        color: white;
+        font-weight: 300;
+        font-size: 1.7em;
+        width: 100%;
+        position: relative;
+        padding-right: 82px;
+
+        .message-content {
+            background: rgba(0, 0, 0, 0.5);
+            line-height: 1.2em;
+            padding: 20px;
+        }
+
+        .remove-message-button {
+            display: block;
+            box-sizing: border-box;
+            padding: 22px 0;
+            text-align: center;
+            line-height: 1.2em;
+            background: rgba(0, 0, 0, 0.3);
+            width: 80px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+            border: none;
+
+            span {
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:hover {
+                color: white;
+                background: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+}
+
+.add-message-button {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    color: white;
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        color: white;
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.add-message-form {
+    margin-bottom: 5px;
+    padding-right: 124px;
+    position: relative;
+}
+
+.add-message-form-input-wrapper {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    color: white;
+
+    input {
+        width: 100%;
+        border: none;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 5px 10px;
+        font-size: 1.4em;
+        font-weight: 300;
+    }
+}
+
+.cancel-message-button {
+    display: block;
+    box-sizing: border-box;
+    padding: 19px 0;
+    text-align: center;
+    line-height: 1.2em;
+    font-size: 1.2em;
+    background: rgba(0, 0, 0, 0.3);
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    cursor: pointer;
+    border: none;
+
+    &:hover, &:focus, &:active {
+        color: white;
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.save-message-button {
+    display: block;
+    box-sizing: border-box;
+    padding: 19px 0;
+    text-align: center;
+    line-height: 1.2em;
+    font-size: 1.2em;
+    background: rgba(0, 0, 0, 0.3);
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 62px;
+    color: white;
+    cursor: pointer;
+    border: none;
+
+    &:hover, &:focus, &:active {
+        color: white;
+        background: rgba(0, 0, 0, 0.8);
+    }
+}

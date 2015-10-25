@@ -1,0 +1,85 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dash</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    {{> main }}
+</body>
+
+<template name="main">
+    <div class="background-video" data-vide-bg="mp4: video/sunset/sunset.mp4, webm: video/sunset/sunset.webm, ogv: video/sunset/sunset.ogv, poster: video/sunset/sunset.jpg" data-vide-options="">
+        {{> clock }}
+        {{> trams }}
+        {{> messages }}
+    </div>
+</template>
+
+<template name="clock">
+    <div class="clock">
+        {{ currentTime }}
+    </div>
+</template>
+
+<template name="trams">
+    <div class="trams">
+        <div class="tram-icon"></div>
+        <div class="tram-zones">
+            <div class="tram-zone tram-zone-distant"></div>
+            <div class="tram-zone tram-zone-near"></div>
+            <div class="tram-zone tram-zone-arriving"></div>
+
+            {{#each trams}}
+                <div class="tram" style="top: {{ position }}%">
+                <span class="tram-arrival-time">{{ minutesUntilArrival }}</span>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="messages">
+    <div class="messages">
+        <ul class="message-list">
+            {{#each messages}}
+                {{> message}}
+            {{/each}}
+        </ul>
+
+        {{#if editorActive}}
+            <form class="add-message-form">
+                <div class="add-message-form-input-wrapper">
+                    <input type="text" id="add-message-input" name="message" placeholder="Enter your message here">
+                </div>
+
+                <button type="submit" class="save-message-button">
+                    <span class='glyphicon glyphicon-ok'></span>
+                </button>
+
+                <button class="cancel-message-button">
+                    <span class='glyphicon glyphicon-remove'></span>
+                </button>
+            </form>
+        {{/if}}
+
+        {{#unless editorActive}}
+            <button class="add-message-button">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        {{/unless}}
+    </div>
+</template>
+
+<template name="message">
+    <li>
+        <div class="message-content">{{ message }}</div>
+        <a class="remove-message-button" href="javascript:void(0);">
+            <span class='glyphicon glyphicon-remove'></span>
+        </a>
+    </li>
+</template>
